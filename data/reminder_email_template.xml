@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Email template -->
+    <record id="mail_birthday_reminder_template" model="mail.template">
+        <field name="name">Birthday Reminder: Notify by email</field>
+        <field name="model_id" ref="model_hr_employee"/>
+        <field name="subject">Reminder for birthday</field>
+        <field name="partner_to">${object.address_home_id.id}</field>
+        <field name="body_html" type="xml">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${object.name}<br/><br/>
+                    This is a reminder that the following employees have birthday's upcoming <br/>
+                    % for employee in object.get_birthday_employees():
+                        % if employee.id != object.id
+                            ${employee.name} - ${employee.next_age} years old
+                        % endif
+                    <br/>
+                    %endfor
+                </p>
+            </div>
+        </field>
+        <field name="lang">${object.address_home_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+        <field name="user_signature" eval="False"/>
+    </record>
+</odoo>

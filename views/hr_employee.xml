@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_employee_birthday_form" model="ir.ui.view">
+        <field name="name">hr.employee.birthday.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="birthday" string="Birthday">
+                    <group>
+                        <group>
+                            <field name="include_birthday" />
+                            <field name="birthday" widget="date" />
+                            <field name="next_birthday" widget="date" />
+                            <field name="birthday_remind_date" widget="date" />
+                        </group>
+                        <group></group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

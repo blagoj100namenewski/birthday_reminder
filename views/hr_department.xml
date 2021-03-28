@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_department_reminders_form" model="ir.ui.view">
+        <field name="name">hr.department.reminders.form</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="priority">12</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <notebook>
+                    <page name="birthdays" string="Birthdays">
+                        <group>
+                            <group>
+                                <field name="reminder_no_days" class="col-2" />
+                                <field name="reminder_employees" widget="many2many_tags" />
+                            </group>
+                            <group></group>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>
