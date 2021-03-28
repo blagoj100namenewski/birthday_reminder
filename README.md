@@ -1,5 +1,5 @@
-#Birthday reminder module
-##Task description:
+# Birthday reminder module
+## Task description:
 Create employees birthday reminder module. Reminder email template model is 'hr.employee'.
 Recipients for reminder are records from res.partner model.
 
@@ -50,7 +50,7 @@ Once a day a cronjob will be executed, checking the reminders date and if the em
 If all checks out then the employee will get an email with a list of upcoming birthdays in N num of days
 (depending of the department of the employee)
 
-##Notes:
+## Notes:
 The idea to put the departments as the settings point is a strange one and confusing. 
 In reality what happens is that the HR department gets notified about all employees in the company.
 It is safe to say that the settings should be put at the level of the company or a more complex structure to be used,
